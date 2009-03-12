@@ -1,0 +1,18 @@
+<% @title = "Sign up as a new user" %>
+<% @user.password = @user.password_confirmation = nil %>
+
+<% form_for :user, :url => users_path do |f| -%>
+	<%= error_messages_for :user, :header_message => "Sorry, we couldn't setup your account", :class => "error" %>
+
+	<p><%= f.label 'email', 'Email' %><br/>
+	<%= f.text_field :email, :size => 25  %></p>
+
+	<p><%= f.label 'password' %><br/>
+	<%= f.password_field :password, :size => 14 %></p>
+
+	<p><%= f.label 'password_confirmation', 'Confirm Password' %><br/>
+	<%= f.password_field :password_confirmation, :size => 14 %></p>
+
+	<p><%= submit_tag 'Sign up' %></p>
+
+<% end -%>

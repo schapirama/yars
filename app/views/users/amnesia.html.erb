@@ -1,0 +1,22 @@
+<% @title = "Forgot your password" %>
+
+	<% form_for :user, nil, :url => amnesia_path do |f| -%>
+    
+		<%= error_messages_for :user, :header_message => "Could not change your password for the following reasons", :class => 'error' %>
+
+		<p><%= label_tag 'email', 'Enter your email address' %><br/>
+		<%= text_field_tag 'email', params[:email] %></p>
+
+		<div class="notice">Specify a new password, and we'll store it for you. We'll send you an email with a confirmation link and, once you click on it, this will be your new password.</div>
+
+		<p><%= label_tag 'changed_password', 'New Password' %><br/>
+		<%= f.password_field :changed_password %></p>
+		
+		<p><%= label_tag 'changed_password_confirmation', 'Confirm New Password' %><br/>
+		<%= f.password_field :changed_password_confirmation %></p>
+			
+		<%= submit_tag 'Request password' %> or <%= link_to "Go back to login", login_url %>
+
+	<% end -%>
+</table>
+

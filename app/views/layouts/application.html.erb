@@ -1,0 +1,47 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+  <title><%= SYSTEM_NAME %> - <%= @title %> </title>
+
+	<link rel="stylesheet" href="/stylesheets/blueprint/screen.css" type="text/css" media="screen, projection" />
+	<link rel="stylesheet" href="/stylesheets/blueprint/print.css" type="text/css" media="print" />
+	<!--[if IE]>
+	  <link rel="stylesheet" href="stylesheets/blueprint/ie.css" type="text/css" media="screen, projection" />
+	<![endif]-->
+	<%= stylesheet_link_tag "application" %>
+	<%= javascript_include_tag "jquery", "jquery-ui", "jrails", "application" %>
+</head>
+<body>
+
+<div class="container">
+	<div id="header" class="span-24">
+		<div class="span-16" style="margin-top:2px">
+		  <h1><%= link_to(SYSTEM_NAME, {:controller => :main}, :style => "text-decoration:none") %></h1>
+		</div>
+		
+		<div class="span-8 last" style="text-align:right; line-height:4">
+		   	<%= render :partial => '/users/user_bar' %>
+		</div>
+	</div>
+
+	<div class="span-24">&nbsp;</div>
+	
+	<div class="span-24" style="min-height:600px">
+		<div class="span-6">&nbsp;</div>
+		<div class="span-12">
+			<h1><%= @title %></h1>
+			<%= "<div class='success'>#{flash[:notice]}</div>" if flash[:notice] -%>
+			<%= "<div class='error'>#{flash[:error]}</div>" if flash[:error] -%>
+			<%= yield %>
+		</div>
+		<div class="span-6 last">&nbsp;</div>
+	</div>
+
+	<div id="footer">
+	  <p>Site made by <%= link_to AUTHOR_NAME, AUTHOR_URL %></p>
+	</div>
+</div>
+
+</body>
+</html>

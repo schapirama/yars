@@ -1,0 +1,75 @@
+/* List */
+
+table.scaffold-list {
+  width: 100%;
+  border-top: 1px solid #CFC392;
+  border-right: 1px solid #CFC392;
+}
+
+table.scaffold-list td, table.scaffold-list th {
+  border-left: 1px solid #CFC392;
+  border-bottom: 1px solid #CFC392;
+  padding: 6px;
+}
+
+table.scaffold-list th {
+  font-weight: bold;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+table.scaffold-list td.scaffold-action {
+  text-align: center;
+  width: 50px;
+  border-left: 0;
+}
+
+table.scaffold-list td.scaffold-paging {
+  text-align: center;
+}
+
+/* Form */
+
+table.scaffold-form td {
+  padding: 6px;
+}
+
+/* Form errors */
+
+.fieldWithErrors input {
+  background-color: red;
+}
+
+.fieldWithErrors label {
+  padding: 2px;
+  border: 1px solid red;
+}
+
+#errorExplanation {
+  width: 400px;
+  border: 1px solid red;
+  padding: 7px;
+  padding-bottom: 12px;
+}
+
+#errorExplanation h2 {
+  text-align: left;
+  font-weight: bold;
+  padding: 5px 5px 5px 15px;
+  font-size: 12px;
+  margin: -7px;
+  background-color: red;
+  color: #fff;
+}
+
+#errorExplanation p {
+  margin-top: 5px;
+  padding: 5px;
+}
+
+#errorExplanation ul li {
+  margin-left: 20px;
+  list-style: disc;
+}
+

@@ -1,0 +1,34 @@
+<%% @title = "<%= plural_name.capitalize %>" %>
+
+<%% if @<%= plural_name %>.size > 0 %>
+
+  <table class="scaffold-list <%= singular_name %>-list">
+    <thead><tr>
+<% for attribute in attributes -%>
+      <th><%= attribute.column.human_name %></th>
+<% end -%>
+      <th colspan="2"></th>
+    </tr></thead>
+    
+    <%% if @<%= plural_name %>.total_pages > 1 %>
+      <tfoot><tr><td class="scaffold-paging" colspan="0">
+        <%%= will_paginate @<%= plural_name %> %>
+      </td></tr></tfoot>
+    <%% end %>
+
+    <tbody>
+      <%% for <%= singular_name %> in @<%= plural_name %> %>
+        <tr>
+<% for attribute in attributes -%>
+          <td><%%= <%= singular_name %>.<%= attribute.name %> %></td>
+<% end -%>
+          <td class="scaffold-action"><%%= link_to "Edit", { :action => :edit, :id => <%= singular_name %>.id } %></td>
+          <td class="scaffold-action"><%%= link_to "Delete", { :action => :destroy, :id => <%= singular_name %>.id }, :confirm => "Are you sure?", :method => :delete %></td>
+        </tr>
+      <%% end %>
+    </tbody>
+  </table>
+
+<%% end %>
+
+<%%= link_to "New <%= singular_name.capitalize %>", :action => "new" %>

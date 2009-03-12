@@ -1,0 +1,15 @@
+<%% @title = "<%= singular_name.capitalize %>" %>
+
+<%% form_for(@<%= singular_name %>, :url => { :action => controller.action_name, :id => @<%= singular_name %>.id }) do |f| %>
+    
+	<%%= f.error_messages :class => "error" %>
+
+	<% for attribute in attributes -%>
+<p><%%= f.label :<%= attribute.name %> %><br/>
+    <%%= f.<%= attribute.field_type %> :<%= attribute.name %> %></p>
+
+    <% end -%>
+    
+    <p><%%= f.submit "Save" %> or <%%= link_to "Cancel", :action => :index %></p>
+    
+<%% end %>
