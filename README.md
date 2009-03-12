@@ -80,3 +80,8 @@ Simply clone this repository to start a new Rails App. Then
 ## Details
 
 See DETAILS.md file for more information about the setup of each plugin.
+
+
+## Authors
+
+* Jay Boice and Agustin Schapira, at [Pomelo, LLC](http://www.pomelollc.com)
